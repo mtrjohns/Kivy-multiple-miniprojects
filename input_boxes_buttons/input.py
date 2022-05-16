@@ -14,22 +14,24 @@ class MyGridLayout(GridLayout):
         
         # Columns
         self.cols = 1
+        self.row_force_default=True
+        self.row_default_height=120
+        self.col_force_default=True
+        self.col_default_width=100
         
         # Create second gridlayout
-        self.top_grid = GridLayout()
+        self.top_grid = GridLayout(
+            row_force_default=True,
+            row_default_height=40,
+            col_force_default=True,
+            col_default_width=100
+            )
         self.top_grid.cols = 2
         
         # Add widgets
-        self.top_grid.add_widget(Label(text="Name: ",
-                                size_hint_y=None, # Need this to adjust height
-                                height=50,
-                                size_hint_x=None,
-                                width=200))
+        self.top_grid.add_widget(Label(text="Name: "))
         #add input box
-        self.name = TextInput(multiline=True,size_hint_y=None, # Need this to adjust height
-                             height=50,
-                             size_hint_x=None,
-                             width=400)
+        self.name = TextInput(multiline=True)
         self.top_grid.add_widget(self.name)
 
         self.top_grid.add_widget(Label(text="Favourite Pizza: "))
