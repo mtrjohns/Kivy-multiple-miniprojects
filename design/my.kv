@@ -1,0 +1,38 @@
+#:kivy 2.0
+<MyGridLayout>
+
+    name: name
+    pizza : pizza
+    color : color
+
+    GridLayout:
+        cols: 1
+        # root is referring to the entire app size
+        size: root.width, root.height
+
+        # Indentation means second gridlayout will be inside the previous
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Name"
+            TextInput:
+                id: name
+                multiline: False
+
+            Label:
+                text: "Favourite Pizza"
+            TextInput:
+                id: pizza
+                multiline: False
+
+            Label:
+                text: "Faveourite Colour"
+            TextInput:
+                id: color
+                multiline: False                
+            
+        Button:
+            text: "Submit"
+            font_size: 32
+            on_press: root.press()
