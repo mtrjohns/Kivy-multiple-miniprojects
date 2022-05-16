@@ -1,0 +1,49 @@
+#:kivy 2.0
+
+#:import utils kivy.utils
+
+<MyGridLayout>
+
+    name: name
+    pizza : pizza
+    color : color
+
+    GridLayout:
+        cols: 1
+        # root is referring to the entire app size
+        size: root.width, root.height
+
+        # Indentation means second gridlayout will be inside the previous
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Name"
+            TextInput:
+                id: name
+                multiline: False
+                background_color: "#FA00DF"
+
+            Label:
+                text: "Favourite Pizza"
+            TextInput:
+                id: pizza
+                multiline: False
+
+            Label:
+                text: "Faveourite Colour"
+            TextInput:
+                id: color
+                multiline: False                
+            
+        Button:
+            text: "Submit"
+            font_size: 32
+            on_press: root.press()
+            # grey is default and mixes colours together, set to nothing
+            background_normal: ""
+            #(RGBA)
+            #background_color: (0, 0, 1, 1)
+            # hex
+            background_color: "#EEFA00"
+            # utils.get_color_from_hex("#EEFA00")
