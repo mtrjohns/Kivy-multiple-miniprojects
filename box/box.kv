@@ -1,0 +1,23 @@
+#:kivy 2.0
+
+<MyLayout>
+    BoxLayout:
+        # set orientation
+        orientation: "vertical"
+        size: root.width, root.height
+        spacing: 20
+        padding: 50
+
+        Button:
+            text: "Hello World!"
+        Button:
+            text: "Goodbye World!"
+        Button:
+            text: "I'm Hungry!"
+            # uses a dictionary type
+            pos_hint: {'center_x': 0.5}
+            # uses a tuple type
+            size_hint: (1, 0.3)
+            #size_hint: (None, None)
+            #width: 200
+            #height: 50
