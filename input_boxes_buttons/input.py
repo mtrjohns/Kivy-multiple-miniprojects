@@ -13,24 +13,44 @@ class MyGridLayout(GridLayout):
         super(MyGridLayout, self).__init__(**kwargs)
         
         # Columns
-        self.cols = 2
+        self.cols = 1
+        
+        # Create second gridlayout
+        self.top_grid = GridLayout()
+        self.top_grid.cols = 2
         
         # Add widgets
-        self.add_widget(Label(text="Name: "))
+        self.top_grid.add_widget(Label(text="Name: ",
+                                size_hint_y=None, # Need this to adjust height
+                                height=50,
+                                size_hint_x=None,
+                                width=200))
         #add input box
-        self.name = TextInput(multiline=False)
-        self.add_widget(self.name)
+        self.name = TextInput(multiline=True,size_hint_y=None, # Need this to adjust height
+                             height=50,
+                             size_hint_x=None,
+                             width=400)
+        self.top_grid.add_widget(self.name)
 
-        self.add_widget(Label(text="Favourite Pizza: "))
+        self.top_grid.add_widget(Label(text="Favourite Pizza: "))
         self.pizza = TextInput(multiline=False)
-        self.add_widget(self.pizza)
+        self.top_grid.add_widget(self.pizza)
 
-        self.add_widget(Label(text="Favourite Colour: "))
+        self.top_grid.add_widget(Label(text="Favourite Colour: "))
         self.color = TextInput(multiline=False)
-        self.add_widget(self.color)
+        self.top_grid.add_widget(self.color)
+        
+        # Add new top_grid to the app
+        self.add_widget(self.top_grid)
+        
         
         # Create a submit button
-        self.submit = Button(text="Submit", font_size=32)
+        self.submit = Button(text="Submit",
+                             font_size=32,
+                             size_hint_y=None, # Need this to adjust height
+                             height=50,
+                             size_hint_x=None,
+                             width=200)
         # Bind the button
         self.submit.bind(on_press=self.press)
         self.add_widget(self.submit)
