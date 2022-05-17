@@ -1,0 +1,26 @@
+#:kivy 2.1.0
+
+<MyLayout>
+    # Float layout allows for explicit placing in proportion to the screen
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.width
+
+        Label:
+            # allow for reference through an id
+            id: name_label
+            text: "What's your name?"
+            font_size: 32
+
+        TextInput:
+            id: name_input
+            multiline: False
+            size_hint: (1, 0.5)
+
+        Button:
+            size_hint: (1, 0.5)
+            font_size: 32
+            text: "Submit"
+            # run the press function in the main py
+            on_press: root.press()
