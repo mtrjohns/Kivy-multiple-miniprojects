@@ -1,0 +1,29 @@
+#:kivy 2.0
+
+<Button>
+    font_size: 32
+    size_hint: (0.3, 0.3)
+
+<MyLayout>
+    FloatLayout:
+        # Widgets expand to the size of our app
+        size: root.width, root.width
+
+
+        Button:
+            text: "Top Left"
+            # {"x", "y", "top", "bottom", "left", "right"}
+            pos_hint: {"x": 0, "top": 1}
+
+        Button:
+            text: "Top Right"
+            pos_hint: {"x": 0.7, "top": 1}
+        Button:
+            text: "Center"
+            pos_hint: {"x": 0.35, "y": 0.35}
+        Button:
+            text: "Bottom Left"
+            pos_hint: {"x": 0}
+        Button:
+            text: "Bottom Right"
+            pos_hint: {"x": 0.7, "bottom": 1}
