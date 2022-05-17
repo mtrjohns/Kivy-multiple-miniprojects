@@ -1,28 +1,19 @@
 #:kivy 2.0
 
-# Button that applies to every button
-<Button>
-    #font_size: 32
-    background_normal: ""
-    background_color: (0,0,1,1)
-
-<TextInput>
-    background_normal: ""
-    background_color: ("#808080")
-
 <MyLayout>
     BoxLayout:
         orientation: "vertical"
         # Widgets expand to the size of our app
         size: root.width, root.width
-        padding: 10
-        spacing: 10
+        padding: 50
+        spacing: 20
 
-        Label:
-            text: "Name"
-        TextInput:
-            multiline: False
+        # Add image by pointing to the image
+        Image:
+            source: "Rio.jpg"
+            allow_stretch: True
+            keep_ratio: True
 
         Button:
-            text: "Clear"
+            text: "Submit"
             background_color: (1,0,0,1)

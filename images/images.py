@@ -4,7 +4,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 
 # Allows designation of a specific .kv design file
-Builder.load_file("bg.kv")
+Builder.load_file("images.kv")
 
 class MyLayout(Widget):
     pass
