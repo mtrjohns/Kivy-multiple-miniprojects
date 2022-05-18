@@ -55,7 +55,21 @@ class MyLayout(Widget):
         # Create variable to contain current text box value
         prior = self.ids.calc_input.text
         # add a plus sign to the text box
-        self.ids.calc_input.text = f"{prior}="
+        #self.ids.calc_input.text = f"{prior}="
+        
+        # Addition
+        if "+" in prior:
+            # Separate into a list at each '+' sign
+            num_list = prior.split("+")
+            answer = 0
+            
+            # Loop through list
+            for number in num_list:
+                answer += int(number)
+            
+            # Print the answer in the text box
+            self.ids.calc_input.text = str(answer)
+            
     
 
 class CalculatorApp(App):
