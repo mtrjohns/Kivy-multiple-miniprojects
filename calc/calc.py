@@ -48,7 +48,15 @@ class MyLayout(Widget):
     def dot(self):
         prior = self.ids.calc_input.text
         
-        if "." in prior:
+        num_list = prior.split("+")
+
+        # If there is a '+' and the last input is not a '.'
+        if "+" in prior and "." not in num_list[-1]:
+            # Add a decimal to the end of the text
+            prior = f"{prior}."
+            # output back to the text box
+            self.ids.calc_input.text = prior
+        elif "." in prior:
             pass
         else:
             # Add a decimal to the end of the text
@@ -60,8 +68,9 @@ class MyLayout(Widget):
     def math_sign(self, sign):
         # Create variable to contain current text box value
         prior = self.ids.calc_input.text
-        # add a plus sign to the text box
-        self.ids.calc_input.text = f"{prior}{sign}"
+        if prior[-1] != "+":
+            # add a plus sign to the text box
+            self.ids.calc_input.text = f"{prior}{sign}"
 
     def equals(self):
         # Create variable to contain current text box value
