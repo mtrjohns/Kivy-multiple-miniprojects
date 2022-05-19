@@ -19,6 +19,12 @@ class MyLayout(Widget):
         # Create variable to contain current text box value
         prior = self.ids.calc_input.text
         
+        # Test for error (set in from equals())
+        if "Err" in prior:
+            # Set to nothing with new input
+            prior = ""
+            print("here")
+        
         # is 0 in the input
         if prior == "0":
             self.ids.calc_input.text = ""
@@ -75,21 +81,31 @@ class MyLayout(Widget):
     def equals(self):
         # Create variable to contain current text box value
         prior = self.ids.calc_input.text
+        
+        # Error handling
+        try:        
+            # use eval() - takes a string and evaluates it for multiple signs
+            answer = eval(prior)
+            # Output the answer as a string
+            self.ids.calc_input.text = str(answer)
+        except:
+             self.ids.calc_input.text = "Err"
+        
         # add a plus sign to the text box
         #self.ids.calc_input.text = f"{prior}="
         
         # Addition
-        if "+" in prior:
-            # Separate into a list at each '+' sign
-            num_list = prior.split("+")
-            answer = 0.0
+        # if "+" in prior:
+        #     # Separate into a list at each '+' sign
+        #     num_list = prior.split("+")
+        #     answer = 0.0
             
-            # Loop through list
-            for number in num_list:
-                answer += float(number)
+        #     # Loop through list
+        #     for number in num_list:
+        #         answer += float(number)
             
-            # Print the answer in the text box
-            self.ids.calc_input.text = str(answer)
+        #     # Print the answer in the text box
+        #     self.ids.calc_input.text = str(answer)
             
     
 
