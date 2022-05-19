@@ -1,0 +1,24 @@
+#:kivy 2.0
+
+<MyLayout>
+    # Reference for the .py file
+    slide_text: slider_label
+
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.height
+        
+        Label:
+            id: slider_label
+            test: "Slide the slider!"
+            font_size: 32
+
+        Slider:
+            min: 1
+            max: 50
+            step: 1.0
+            # defaults to horizontal
+            orientation: "horizontal"
+            # function to passin args (name of slider and step count)
+            on_value: root.slide_it(*args)
