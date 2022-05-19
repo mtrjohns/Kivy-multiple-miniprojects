@@ -1,0 +1,38 @@
+#:kivy 2.0
+
+<MyLayout>
+
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.height
+        
+        padding: 50
+        spacing: 20
+
+        Button:
+            text: "Hello World!"
+        
+        RounedButton:
+            text: "Goodbye World!"
+            pos_hint: { "center_x": 0.5 }
+            size_hint: (1, 0.3)
+            #background_normal: ""
+            #background_color: ("#305496")
+
+# Create a new button type
+# Inherit from Button
+<RounedButton@Button>
+    background_normal: ""
+    background_color: (0, 0, 0, 0)
+
+    # Canvas to colour the button
+    canvas.before:
+        Color:
+            rgba: (48/255, 84/255, 150/255, 1)
+
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            # round the corners by a radius value in list form
+            radius: [58]
