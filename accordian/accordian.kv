@@ -1,0 +1,36 @@
+#:kivy 2.0
+
+<MyLayout>
+
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.height
+        
+        Accordion:
+            orientation: "vertical"
+
+            AccordionItem:
+                title: "Panel 1"
+                Image:
+                    source: "Rio.jpg"
+            
+            AccordionItem:
+                title: "Panel 2"
+                Label:
+                    text: "Panel 2 Test"
+                    font_size: 32
+            
+            AccordionItem:
+                title: "Panel 3"
+                Label:
+                    text: "Panel 3 Test"
+                    font_size: 32
+            
+            AccordionItem:
+                title: "Panel 4"
+                Label:
+                    text: "Panel 4 Test"
+                    font_size: 32
+
+            
