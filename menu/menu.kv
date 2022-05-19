@@ -1,0 +1,20 @@
+#:kivy 2.0
+
+<MyLayout>
+    id: my_widget
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.height
+        
+        padding: 50
+        spacing: 20
+
+        Image:
+            id: my_image
+            source: ""
+
+        FileChooserIconView:
+            id: filechooser
+            # select the item clicked on in the filechooser
+            on_selection: my_widget.selected(filechooser.selection)
