@@ -3,12 +3,10 @@ from kivy.uix.widget import Widget
 from kivy.lang import Builder
 
 # Allows designation of a specific .kv design file
-Builder.load_file("spin.kv")
+Builder.load_file("split.kv")
 
 class MyLayout(Widget):
-    def spinner_clicked(self, value):
-        # output the value back to screen
-        self.ids.click_label.text = f"You selected : {value}"
+    pass
 
 class AwesomeApp(App):
     def build(self):

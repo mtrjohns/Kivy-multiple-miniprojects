@@ -1,0 +1,41 @@
+#:kivy 2.0
+
+<MyLayout>
+
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.height
+
+        # on the bottom of the button within place a splitter
+        Splitter:
+            sizable_from: "bottom"
+
+            Button:
+                text: "Hello World 1"
+                font_size: 32
+
+        Label:
+            text: "This is some text!"
+            font_size: 32
+
+        Splitter:
+            sizable_from: "top"
+
+            Button:
+                text: "Hello World 2"
+                font_size: 32
+
+        GridLayout:
+            cols: 2
+
+            Button:
+                text: "left"
+                font_size: 32
+
+            Splitter:
+                sizable_from: "left"
+
+                Button:
+                    text: "right"
+                    font_size: 32
