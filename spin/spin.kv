@@ -1,0 +1,21 @@
+#:kivy 2.0
+
+<MyLayout>
+
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.height
+        
+        Label:
+            id: click_label
+            text: "Pick favourite pizza below"
+            font_size: 32
+
+        Spinner:
+            id: spinner_id
+            text: "Favourite pizza"
+            values: ["Pepperoni", "Cheese", "Mushroom"]
+
+            # pass in the selected text
+            on_text: root.spinner_clicked(spinner_id.text)
