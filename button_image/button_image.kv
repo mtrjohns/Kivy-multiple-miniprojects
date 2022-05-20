@@ -1,0 +1,36 @@
+#:kivy 2.0
+
+<MyLayout>
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.height
+
+        padding: 50
+        spacing: 20
+
+        Label:
+            id: my_label
+            text: "Hello World"
+            font_size: 32
+
+        Button:
+            text: "Hello"
+            font_size: 32
+            size_hint: 0.15, 0.12
+            pos_hint: {"center_x":0.5}
+
+            # hide the button, hack, the square button is still there
+            # and will cause a button press
+            background_color: 0,0,0,0
+
+            on_press: root.hello_on()
+            on_release: root.hello_off()
+
+            Image:
+                id: my_image
+                source: "login.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+        

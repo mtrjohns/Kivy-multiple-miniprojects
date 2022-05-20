@@ -1,0 +1,31 @@
+#:kivy 2.0
+
+<MyLayout>
+    # disable the default tab
+    do_default_tab: False
+
+    size_hint: 0.5, 0.5
+    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+    tab_pos: "top_mid"
+
+    TabbedPanelItem:
+        text: "Tab 1"
+        Label:
+            text: "Hello World!"
+
+    TabbedPanelItem:
+        text: "Tab 2"
+
+        BoxLayout:
+            #orientation:'vertical'
+            Label:
+                text: "Press the button =>"
+            ToggleButton:
+                text: "Click Me!"
+
+    TabbedPanelItem:
+        text: "Tab 3"
+
+        Image:
+            source: "bing.jpg"
