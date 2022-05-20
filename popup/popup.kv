@@ -1,0 +1,44 @@
+#:kivy 2.0
+# lets you define and instantiate a class anywhere in your app
+#:import Factory kivy.factory.Factory
+
+<MyPopup@Popup>
+    # if you click outside the popup box, it will go away
+    auto_dismiss: True
+    size_hint: 0.6, 0.2
+    pos_hint: { "x": 0.2, "top": 0.9 }
+
+    title: "This is a popup box"
+    
+    # can only have a single item in popup window as the base
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.height
+
+        Label:
+            text: "Something in our popup nox!"
+            font_size: 24
+
+        Button:
+            text: "Close!"
+            font_size: 24
+            # dismiss the popup window
+            on_release: root.dismiss()
+
+<MyLayout>
+
+    BoxLayout:
+        orientation: "vertical"
+        # Widgets expand to the size of our app
+        size: root.width, root.height
+
+        Label:
+            text: "Popup Stuff"
+            font_size: 32
+
+        Button:
+            text: "Popup"
+            font_size: 32      
+            # call an instance of a class and open the popup
+            on_release: Factory.MyPopup().open()
