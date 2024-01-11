@@ -38,7 +38,7 @@ class MyLayout(Widget):
         animate.bind(on_complete = self.my_callback)
 
     def my_callback(self, *args):
-        self.ids.my_label.text = "Wow! Look at that animation!"
+        self.ids.my_label.text = "Wow! It moves!"
 
 class AwesomeApp(App):
     def build(self):
