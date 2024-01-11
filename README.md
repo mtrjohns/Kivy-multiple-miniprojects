@@ -6,7 +6,7 @@
 - pip install kivy
 
 #### How to contribute to this repository
-- Fork this repositroy
+- Fork this repository
 - Clone your forked repository
 - Add your updated scripts
 - Commit and push
